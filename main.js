@@ -1,12 +1,15 @@
 
         // import QrScanner from "./node_modules/qr-scanner/qr-scanner.min.js"
         let scanned ;
+        
         const video = document.getElementById('qr-video');
         const videoContainer = document.getElementById('video-container');
         videoContainer.className = "example-style-2";
         const camHasCamera = document.getElementById('cam-has-camera');
         const camList = document.getElementById('cam-list');
-        const camHasFlash = document.getElementById('cam-has-flash');
+        
+        // const camHasFlash = document.getElementById('cam-has-flash');
+        const flashDiv = document.querySelector(".cameraFlash")
         const flashToggle = document.getElementById('flash-toggle');
         const flashState = document.getElementById('flash-state');
         const camQrResult = document.getElementById('cam-qr-result');
@@ -39,8 +42,9 @@
     
         const updateFlashAvailability = () => {
             scanner.hasFlash().then(hasFlash => {
-                camHasFlash.textContent = hasFlash;
+                // camHasFlash.textContent = hasFlash;
                 flashToggle.style.display = hasFlash ? 'inline-block' : 'none';
+                flashDiv.style.display = hasFlash ? 'block' : 'none';
             });
         };
     
@@ -68,23 +72,23 @@
         // for debugging
         window.scanner = scanner;
     
-        document.getElementById('scan-region-highlight-style-select').addEventListener('change', (e) => {
-            console.log(e.target.value);
-            videoContainer.className = e.target.value;
-            scanner._updateOverlay(); // reposition the highlight because style 2 sets position: relative
-        });
+        // document.getElementById('scan-region-highlight-style-select').addEventListener('change', (e) => {
+        //     console.log(e.target.value);
+        //     videoContainer.className = e.target.value;
+        //     scanner._updateOverlay(); // reposition the highlight because style 2 sets position: relative
+        // });
     
-        document.getElementById('show-scan-region').addEventListener('change', (e) => {
-            const input = e.target;
-            const label = input.parentNode;
-            label.parentNode.insertBefore(scanner.$canvas, label.nextSibling);
-            scanner.$canvas.style.display = input.checked ? 'block' : 'none';
-        });
+        // document.getElementById('show-scan-region').addEventListener('change', (e) => {
+        //     const input = e.target;
+        //     const label = input.parentNode;
+        //     label.parentNode.insertBefore(scanner.$canvas, label.nextSibling);
+        //     scanner.$canvas.style.display = input.checked ? 'block' : 'none';
+        // });
     
-        document.getElementById('inversion-mode-select').addEventListener('change', event => {
-            scanner.setInversionMode(event.target.value);
-        });
-    
+        // document.getElementById('inversion-mode-select').addEventListener('change', event => {
+        //     scanner.setInversionMode(event.target.value);
+        // });
+            scanner.setInversionMode("both");
         camList.addEventListener('change', event => {
             scanner.setCamera(event.target.value).then(updateFlashAvailability);
         });
@@ -116,3 +120,13 @@
                });
         });
         // console.log(scanned);
+
+
+
+
+
+        let iconBtns = document.querySelectorAll('.iconButton')
+        iconBtns.forEach(e=>{
+            e.children[0].setAttribute('draggable', false)
+            // console.log(e.children[0])
+        });

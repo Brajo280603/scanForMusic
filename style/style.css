@@ -63,3 +63,16 @@ input[type="file"] {
     display: block;
     margin-bottom: 16px;
 }
+
+
+.styleSelector{
+    position: fixed;
+    top: 2%;
+    right: 5%;
+}
+
+.iconButton :active{
+    filter: brightness(90%);
+    transform: scale(0.9);
+    transition: 300ms;
+}

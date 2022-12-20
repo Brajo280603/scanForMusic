@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="st.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/st.css">
     <title>scanForMusic</title>
 </head>
 <body>
@@ -14,7 +14,7 @@
         <video id="qr-video"></video>
     </div>
     <div style="position: fixed; top:0;left:0; height: 100vh; width: 100vw;">
-        <div>
+        <!-- <div class="styleSelector">
             <label>
                 Highlight Style
                 <select id="scan-region-highlight-style-select">
@@ -27,16 +27,16 @@
                 <input id="show-scan-region" type="checkbox">
                 Show scan region canvas
             </label>
-        </div>
-        <div>
+        </div> -->
+        <!-- <div>
             <select id="inversion-mode-select">
                 <option value="original">Scan original (dark QR code on bright background)</option>
                 <option value="invert">Scan with inverted colors (bright QR code on dark background)</option>
                 <option value="both">Scan both</option>
             </select>
             <br>
-        </div>
-        <b>Device has camera: </b>
+        </div> -->
+
         <div id="cam-has-camera" style="height: 100vh;width:100vw;position:fixed;top:0;left: 0;">
         <div id="notfound">
             <div class="notfound">
@@ -49,31 +49,54 @@
         </div>
         </div>
         <br>
-        <div>
-            <b>Preferred camera:</b>
-            <select id="cam-list">
-                <option value="environment" selected>Environment Facing (default)</option>
-                <option value="user">User Facing</option>
-            </select>
-        </div>
-        <b>Camera has flash: </b>
-        <span id="cam-has-flash"></span>
-        <div>
-            <button id="flash-toggle" style="display: block;">📸 Flash: <span id="flash-state">off</span></button>
+                <!-- <b>Camera has flash: </b>
+        <span id="cam-has-flash"></span> -->
+        <div style="position: fixed;bottom:0;right:50%; display: flex;width: 50vw;transform: translateX(50%); justify-content: space-evenly;"> 
+            <div class="cameraSwitcher" >
+                <!-- <b>Preferred camera:</b> -->
+                <!-- <select id="cam-list">
+                    <option value="environment" selected>Environment Facing (default)</option>
+                    <option value="user">User Facing</option>
+                </select> -->
+                <button class="iconButton" style="background-color: transparent;border: none;">
+                    <img src="./style/icons/switch_camera_material_square.png" alt="">
+                </button>
+            </div>
+
+            <div id="startStopBtn">
+                <!-- <button id="start-button">Start</button>
+                <button id="stop-button">Stop</button> -->
+                <button class="iconButton" style="background-color: transparent;border: none;">
+                    <img src="./style/icons/close_material_square.png" alt="">
+                </button>
+            </div>
+
+            <div class="cameraFlash" >
+                <!-- <button id="flash-toggle" style="display: block;">📸 Flash: <span id="flash-state">off</span></button> -->
+                <button id="flash-toggle" class="iconButton" style="background-color: transparent;border: none;">
+                    <img src="./style/icons/flash_on_material_square.png" alt="">
+                </button>
+            </div>
+
         </div>
         <br>
         <b>Detected QR code: </b>
         <span id="cam-qr-result">None</span>
         <br>
-        <b>Last detected at: </b>
+        <!-- <b>Last detected at: </b>
         <span id="cam-qr-result-timestamp"></span>
-        <br>
-        <button id="start-button">Start</button>
-        <button id="stop-button">Stop</button>
-        <hr>
+        <br> -->
+       
         
-        <h1>Scan from File:</h1>
-        <input type="file" id="file-selector">
+        <!-- <h1>Scan from File:</h1> -->
+        <div class="image-upload" style="position:fixed;top:10%0;right:10%">
+            <label for="file-selector">
+              <img src="./style/icons/add_file_material_square.png"/>
+            </label>
+          
+            <input type="file" id="file-selector" style="display: none;">
+            
+        </div>
         <b>Detected QR code: </b>
         <span id="file-qr-result">None</span>
     </div>
