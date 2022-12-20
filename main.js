@@ -58,7 +58,12 @@
             }));
         });
     
-        QrScanner.hasCamera().then(hasCamera => camHasCamera.textContent = hasCamera);
+        QrScanner.hasCamera().then(hasCamera => {
+            // camHasCamera.textContent = hasCamera;
+            if(!hasCamera){
+                camHasCamera.style.display= "block";
+            }
+        });
     
         // for debugging
         window.scanner = scanner;

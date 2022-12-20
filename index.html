@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="st.css">
     <title>scanForMusic</title>
 </head>
 <body>
@@ -12,7 +13,7 @@
     <div id="video-container">
         <video id="qr-video"></video>
     </div>
-    <div style="display: none;">
+    <div style="position: fixed; top:0;left:0; height: 100vh; width: 100vw;">
         <div>
             <label>
                 Highlight Style
@@ -36,7 +37,17 @@
             <br>
         </div>
         <b>Device has camera: </b>
-        <span id="cam-has-camera"></span>
+        <div id="cam-has-camera" style="height: 100vh;width:100vw;position:fixed;top:0;left: 0;">
+        <div id="notfound">
+            <div class="notfound">
+                <div class="notfound-404">
+                <h1>ERROR!</h1>
+                <h2>Camera not found!</h2>
+                </div>
+            <a href="https://github.com/Brajo280603/scanForMusic/issues/new">report an error !</a>
+            </div>
+        </div>
+        </div>
         <br>
         <div>
             <b>Preferred camera:</b>
@@ -48,7 +59,7 @@
         <b>Camera has flash: </b>
         <span id="cam-has-flash"></span>
         <div>
-            <button id="flash-toggle">📸 Flash: <span id="flash-state">off</span></button>
+            <button id="flash-toggle" style="display: block;">📸 Flash: <span id="flash-state">off</span></button>
         </div>
         <br>
         <b>Detected QR code: </b>
