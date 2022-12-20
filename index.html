@@ -65,10 +65,10 @@
     <b>Detected QR code: </b>
     <span id="file-qr-result">None</span>
     
-    <!--<script src="../qr-scanner.umd.min.js"></script>-->
-    <!--<script src="../qr-scanner.legacy.min.js"></script>-->
-    <script type="module">
-        import QrScanner from "./node_modules/qr-scanner/qr-scanner.min.js"
+    <script src="./node_modules/qr-scanner/qr-scanner.umd.min.js"></script>
+    <script src="./node_modules/qr-scanner/qr-scanner.legacy.min.js"></script>
+    <script>
+        // import QrScanner from "./node_modules/qr-scanner/qr-scanner.min.js"
         let scanned ;
         const video = document.getElementById('qr-video');
         const videoContainer = document.getElementById('video-container');
