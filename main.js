@@ -1,17 +1,13 @@
 
         // import QrScanner from "./node_modules/qr-scanner/qr-scanner.min.js"
         let scanned ;
-<<<<<<< HEAD
+
         let cameraLists = [];
         cameraLists.push("environment");
-        cameraLists.push("user");
-=======
-        
+        cameraLists.push("user");   
         const cameraBtn = document.getElementById('cameraBtn');
         const cameraBtnImg = document.getElementById('cameraBtnImg');
         const cameraSwitcherBtn = document.getElementById('cameraSwitcherBtn');
-
->>>>>>> e3679db (git fix for rebase)
         const video = document.getElementById('qr-video');
         const videoContainer = document.getElementById('video-container');
         videoContainer.className = "example-style-2";
