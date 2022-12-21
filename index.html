@@ -58,7 +58,11 @@
                     <option value="environment" selected>Environment Facing (default)</option>
                     <option value="user">User Facing</option>
                 </select> -->
+<<<<<<< HEAD
                 <button class="iconButton" id="cameraSwitcher" style="background-color: transparent;border: none;" >
+=======
+                <button class="iconButton" id="cameraSwitcherBtn" style="background-color: transparent;border: none;" value="user">
+>>>>>>> e3679db (git fix for rebase)
                     <img src="./style/icons/switch_camera_material_square.png" alt="">
                 </button>
             </div>
@@ -66,14 +70,15 @@
             <div id="startStopBtn">
                 <!-- <button id="start-button">Start</button>
                 <button id="stop-button">Stop</button> -->
-                <button class="iconButton" style="background-color: transparent;border: none;">
-                    <img src="./style/icons/close_material_square.png" alt="">
+                <button id="cameraBtn" class="iconButton" style="background-color: transparent;border: none;" value="on">
+                    <img id="cameraBtnImg" src="./style/icons/close_material_square.png" alt="">
+                    
                 </button>
             </div>
 
             <div class="cameraFlash" >
                 <!-- <button id="flash-toggle" style="display: block;">📸 Flash: <span id="flash-state">off</span></button> -->
-                <button id="flash-toggle" class="iconButton" style="background-color: transparent;border: none;">
+                <button id="flash-toggle" class="iconButton" style="background-color: transparent;border: none;" >
                     <img src="./style/icons/flash_on_material_square.png" alt="">
                 </button>
             </div>

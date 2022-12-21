@@ -1,9 +1,17 @@
 
         // import QrScanner from "./node_modules/qr-scanner/qr-scanner.min.js"
         let scanned ;
+<<<<<<< HEAD
         let cameraLists = [];
         cameraLists.push("environment");
         cameraLists.push("user");
+=======
+        
+        const cameraBtn = document.getElementById('cameraBtn');
+        const cameraBtnImg = document.getElementById('cameraBtnImg');
+        const cameraSwitcherBtn = document.getElementById('cameraSwitcherBtn');
+
+>>>>>>> e3679db (git fix for rebase)
         const video = document.getElementById('qr-video');
         const videoContainer = document.getElementById('video-container');
         videoContainer.className = "example-style-2";
@@ -60,8 +68,12 @@
                 const option = document.createElement('option');
                 option.value = camera.id;
                 option.text = camera.label;
+<<<<<<< HEAD
                 // cameraLists.push(camera.id)
                 camList.add(option);
+=======
+                // camList.add(option);
+>>>>>>> e3679db (git fix for rebase)
             }));
         });
     
@@ -95,20 +107,38 @@
         // camList.addEventListener('change', event => {
         //     scanner.setCamera(event.target.value).then(updateFlashAvailability);
         // });
+<<<<<<< HEAD
 
         cameraSwitcher.addEventListener('click')
+=======
+>>>>>>> e3679db (git fix for rebase)
     
         flashToggle.addEventListener('click', () => {
             scanner.toggleFlash().then(() => flashState.textContent = scanner.isFlashOn() ? 'on' : 'off');
         });
     
-        document.getElementById('start-button').addEventListener('click', () => {
-            scanner.start();
-        });
+        // document.getElementById('start-button').addEventListener('click', () => {
+        //     scanner.start();
+        // });
     
-        document.getElementById('stop-button').addEventListener('click', () => {
-            scanner.stop();
-        });
+        // document.getElementById('stop-button').addEventListener('click', () => {
+        //     scanner.stop();
+        // });
+
+        cameraBtn.addEventListener("click",()=>{
+            if(cameraBtn.value=="on"){
+                scanner.stop();
+                cameraBtn.value = "off";
+                console.log("cam off");
+                cameraBtnImg.src="./style/icons/retake_material_square.png";
+            }
+            else if(cameraBtn.value == "off"){
+                scanner.start();
+                cameraBtn.value = "on";
+                console.log("cam on");
+                cameraBtnImg.src="./style/icons/close_material_square.png";
+            }
+        })
     
         // ####### File Scanning #######
     
