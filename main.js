@@ -1,13 +1,15 @@
 
         // import QrScanner from "./node_modules/qr-scanner/qr-scanner.min.js"
         let scanned ;
-        
+        let cameraLists = [];
+        cameraLists.push("environment");
+        cameraLists.push("user");
         const video = document.getElementById('qr-video');
         const videoContainer = document.getElementById('video-container');
         videoContainer.className = "example-style-2";
         const camHasCamera = document.getElementById('cam-has-camera');
         const camList = document.getElementById('cam-list');
-        
+        const cameraSwitcher = document.getElementById('cameraSwitcher');
         // const camHasFlash = document.getElementById('cam-has-flash');
         const flashDiv = document.querySelector(".cameraFlash")
         const flashToggle = document.getElementById('flash-toggle');
@@ -58,6 +60,7 @@
                 const option = document.createElement('option');
                 option.value = camera.id;
                 option.text = camera.label;
+                // cameraLists.push(camera.id)
                 camList.add(option);
             }));
         });
@@ -89,9 +92,11 @@
         //     scanner.setInversionMode(event.target.value);
         // });
             scanner.setInversionMode("both");
-        camList.addEventListener('change', event => {
-            scanner.setCamera(event.target.value).then(updateFlashAvailability);
-        });
+        // camList.addEventListener('change', event => {
+        //     scanner.setCamera(event.target.value).then(updateFlashAvailability);
+        // });
+
+        cameraSwitcher.addEventListener('click')
     
         flashToggle.addEventListener('click', () => {
             scanner.toggleFlash().then(() => flashState.textContent = scanner.isFlashOn() ? 'on' : 'off');
