@@ -64,12 +64,11 @@
                 const option = document.createElement('option');
                 option.value = camera.id;
                 option.text = camera.label;
-<<<<<<< HEAD
+
                 // cameraLists.push(camera.id)
                 camList.add(option);
-=======
                 // camList.add(option);
->>>>>>> e3679db (git fix for rebase)
+
             }));
         });
     
@@ -103,11 +102,10 @@
         // camList.addEventListener('change', event => {
         //     scanner.setCamera(event.target.value).then(updateFlashAvailability);
         // });
-<<<<<<< HEAD
+
 
         cameraSwitcher.addEventListener('click')
-=======
->>>>>>> e3679db (git fix for rebase)
+
     
         flashToggle.addEventListener('click', () => {
             scanner.toggleFlash().then(() => flashState.textContent = scanner.isFlashOn() ? 'on' : 'off');
