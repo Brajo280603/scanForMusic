@@ -13,7 +13,7 @@
         videoContainer.className = "example-style-2";
         const camHasCamera = document.getElementById('cam-has-camera');
         const camList = document.getElementById('cam-list');
-        const cameraSwitcher = document.getElementById('cameraSwitcher');
+
         // const camHasFlash = document.getElementById('cam-has-flash');
         const flashDiv = document.querySelector(".cameraFlash")
         const flashToggle = document.getElementById('flash-toggle');
@@ -66,7 +66,7 @@
                 option.text = camera.label;
 
                 // cameraLists.push(camera.id)
-                camList.add(option);
+                cameraLists.push(option);
                 // camList.add(option);
 
             }));
@@ -104,7 +104,18 @@
         // });
 
 
-        cameraSwitcher.addEventListener('click')
+        cameraSwitcherBtn.addEventListener('click',()=>{
+            if(cameraSwitcherBtn.value == "user"){
+                scanner.setCamera(cameraSwitcherBtn.value).then(updateFlashAvailability);
+                cameraSwitcherBtn.value="environment";
+                console.log("cam changed:",cameraSwitcherBtn.value);
+            }
+            else if(cameraSwitcherBtn.value == "environment"){
+                scanner.setCamera(cameraSwitcherBtn.value).then(updateFlashAvailability);
+                cameraSwitcherBtn.value="user";
+                console.log("cam changed:",cameraSwitcherBtn.value);
+            }
+        })
 
     
         flashToggle.addEventListener('click', () => {
