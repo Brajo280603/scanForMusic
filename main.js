@@ -170,3 +170,20 @@
             e.children[0].setAttribute('draggable', false)
             // console.log(e.children[0])
         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //______________________________ Adding service worker_____________________
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./service-worker.js'); //registering a Service worker is mandatory for PWA installation
+          }
